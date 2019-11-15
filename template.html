@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Choose your own adventure book</title>
+        <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/static/css/style.css">
+    </head>
+    <body>
+        <div class="container">
+          <div id="content">
+            <h1 id="heading">{{ .Title}}</h1>
+            {{range .Paragraph}}
+            <p class="para">{{.}}</p>
+            {{end}}
+            <div id="select">
+                {{range .Options}}
+              <a href="/{{.Arc}}" class="link">{{.Text}}</a>
+               {{end}}
+             </div>
+          </div> 
+        </div>
+        <script src="/static/js/app.js"></script>
+    </body>
+</html>
+<!-- <!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>choose your own adventure book</title>
+
+    </head>
+    <body>
+        <h1 class="aaa">{{.Title}}</h1>
+        {{range .Paragraph}}
+         <p>{{.}}</p>
+         {{end}}
+         <ul>
+             {{range .Options}}
+             <li><a href="/{{.Arc}}">{{.Text}}</a></li>
+             {{end}}
+         </ul>
+    </body>
+</html> -->
